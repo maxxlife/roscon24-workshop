@@ -1,5 +1,3 @@
-#pragma once
-
 #include <behaviortree_ros2/bt_action_node.hpp>
 #include <pyrobosim_msgs/action/execute_task_action.hpp>
 
@@ -82,8 +80,6 @@ inline NodeStatus ExecuteTaskNode::onResultReceived(const ExecutionResult& execu
                  resultToStr(execution_result), execution_result.message.c_str());
     return NodeStatus::FAILURE;
   }
-  RCLCPP_INFO(logger(), "[%s] succeeded. Message: %s", name().c_str(),
-              execution_result.message.c_str());
   return NodeStatus::SUCCESS;
 }
 
