@@ -20,7 +20,7 @@
             </ros_topic_publish>
         </onentry>
         <ros_topic_callback name="level" target="check_battery">
-            <assign location="battery_alarm" expr="false" />
+            <assign location="battery_alarm" expr="_msg.data &lt;= 30" />
         </ros_topic_callback>
     </state>
 </scxml>
